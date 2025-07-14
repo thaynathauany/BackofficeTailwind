@@ -1,0 +1,18 @@
+@theme {
+  /* 🎨 Cores principais */
+  --color-primary: #e8d6ff;
+  --color-secondary: #d6efff;
+  --color-success: #d7fbe8;
+  --color-danger: #ffd6d6;
+  --color-warning: #fff4cc;
+  --color-gray: #f5f5f5;
+
+  /* 🖋️ Tipografia */
+  --font-sans: "Josefin Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* 🧱 Sombreamentos */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+}

@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* regras globais */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-gray);
+}

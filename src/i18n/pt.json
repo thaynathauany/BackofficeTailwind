@@ -1,0 +1,18 @@
+{
+  "Home": {
+    "title": "Bem-vindo ao painel Dinero Latam",
+    "description": "Aqui você poderá visualizar transações em reais e pesos mexicanos."
+  },
+
+  "Settings": {
+    "title": "Configurações",
+    "language": "Idioma",
+    "adminName": "Nome do administrador"
+  },
+
+  "Sidebar": {
+    "dashboard": "Dashboard",
+    "settings": "Configurações",
+    "title": "Dinero Latam"
+  }
+}
