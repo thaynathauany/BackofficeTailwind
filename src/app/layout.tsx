@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import { Josefin_Sans } from "next/font/google";
 import IntlProvider from "@/components/i18n/IntlProvider";
-import LayoutWrapper from "@/components/layout/LayoutWrapper";
+import AppLayout from "@/components/layout/AppLayout";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="pt-BR" className={josefin.variable}>
       <body className="font-sans">
         <IntlProvider>
-          <LayoutWrapper>{children}</LayoutWrapper>
+          <AppLayout>{children}</AppLayout>
         </IntlProvider>
       </body>
     </html>

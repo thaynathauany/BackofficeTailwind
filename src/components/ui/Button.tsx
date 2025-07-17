@@ -1,5 +1,7 @@
 "use client";
 
+// AINDA NÃO ESTOU USANDO (N SEI SE USAREI)
+
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary";
 }

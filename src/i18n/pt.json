@@ -1,18 +1,34 @@
 {
+  "Header": {
+    "_comment_navigation": "Itens do menu de navegação principal",
+    "home": "Início",
+    "invoices": "Faturas",
+    "clients": "Clientes",
+    "expenses": "Despesas",
+
+    "_comment_user": "Itens do menu de navegação do usuário",
+    "profile": "Seu perfil",
+    "settings": "Configurações",
+    "signOut": "Sair",
+
+    "_comment_language": "Opções de idioma exibidas no seletor",
+    "language": "Idioma",
+    "portuguese": "Português",
+    "spanish": "Espanhol"
+  },
+
   "Home": {
     "title": "Bem-vindo ao painel Dinero Latam",
     "description": "Aqui você poderá visualizar transações em reais e pesos mexicanos."
   },
 
   "Settings": {
-    "title": "Configurações",
-    "language": "Idioma",
-    "adminName": "Nome do administrador"
-  },
-
-  "Sidebar": {
-    "dashboard": "Dashboard",
-    "settings": "Configurações",
-    "title": "Dinero Latam"
+    "_comment": "Itens da navegação lateral da página de configurações",
+    "general": "Geral",
+    "security": "Segurança",
+    "notifications": "Notificações",
+    "plan": "Plano",
+    "billing": "Faturamento",
+    "teamMembers": "Membros da equipe"
   }
 }
