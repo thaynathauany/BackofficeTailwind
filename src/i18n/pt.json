@@ -30,5 +30,19 @@
     "plan": "Plano",
     "billing": "Faturamento",
     "teamMembers": "Membros da equipe"
+  },
+
+  "Login": {
+    "title": "Acesse sua conta",
+    "subtitle": "Ainda não tem conta?",
+    "startTrial": "Comece um teste gratuito de 14 dias",
+    "email": "Endereço de e-mail",
+    "password": "Senha",
+    "rememberMe": "Lembrar de mim",
+    "forgotPassword": "Esqueceu a senha?",
+    "signIn": "Entrar",
+    "orContinueWith": "Ou continue com",
+    "google": "Google",
+    "github": "GitHub"
   }
 }
