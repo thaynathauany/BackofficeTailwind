@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguageStore } from "@/store/languageStore";
-import { NextIntlClientProvider } from "next-intl";
+import { NextIntlClientProvider, AbstractIntlMessages } from "next-intl";
 import { useEffect, useState } from "react";
 import { loadMessages } from "@/lib/i18n";
 
@@ -11,10 +11,16 @@ export default function IntlProviderWrapper({
   children: React.ReactNode;
 }) {
   const { locale } = useLanguageStore();
-  const [messages, setMessages] = useState<any>(null);
+  const [messages, setMessages] = useState<AbstractIntlMessages | null>(null);
 
   useEffect(() => {
-    loadMessages(locale).then(setMessages);
+    let active = true;
+    loadMessages(locale).then((m) => {
+      if (active) setMessages(m as AbstractIntlMessages);
+    });
+    return () => {
+      active = false;
+    };
   }, [locale]);
 
   if (!messages) return null;

@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import {
   ArrowDownCircleIcon,
@@ -147,7 +147,6 @@ function classNames(...classes: (string | false | null | undefined)[]): string {
 }
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
