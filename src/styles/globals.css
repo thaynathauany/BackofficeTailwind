@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "./theme.css";
 
 @tailwind base;
 @tailwind components;
@@ -8,4 +7,17 @@
 /* regras globais */
 body {
   font-family: var(--font-sans);
+}
+
+@theme {
+  --color-primary: #73737f;
+  --color-secondary: #03a5a8;
+  --color-white: #ffffff;
+  --color-btnsecondary: #00696b;
+  --color-gray: #e0e0e0;
+  --color-black: #1a1925;
+  --color-darkgray: #374151;
+  --color-green: #009d15;
+  --color-orange: #cb5608;
+  --color-orange-light: #ee9e09;
 }

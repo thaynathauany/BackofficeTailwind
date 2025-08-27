@@ -1,11 +1,12 @@
 import "../styles/globals.css";
-import { Josefin_Sans } from "next/font/google";
+import { Poppins } from "next/font/google";
 import IntlProvider from "@/components/i18n/IntlProvider";
 import AppLayout from "@/components/layout/AppLayout";
 
-const josefin = Josefin_Sans({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-josefin",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={josefin.variable}>
+    <html lang="pt-BR" className={poppins.variable}>
       <body className="font-sans">
         <IntlProvider>
           <AppLayout>{children}</AppLayout>

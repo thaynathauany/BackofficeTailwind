@@ -174,7 +174,7 @@ export default function Home() {
               </div>
               <a
                 href="#"
-                className="ml-auto flex items-center gap-x-1 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="ml-auto flex items-center gap-x-1 rounded-md bg-secondary px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 <PlusSmallIcon aria-hidden="true" className="-ml-1.5 size-5" />
                 New invoice
@@ -192,8 +192,8 @@ export default function Home() {
                     statIdx % 2 === 1
                       ? "sm:border-l"
                       : statIdx === 2
-                      ? "lg:border-l"
-                      : "",
+                        ? "lg:border-l"
+                        : "",
                     "flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 border-t border-gray-900/5 px-4 py-10 sm:px-6 lg:border-t-0 xl:px-8"
                   )}
                 >
@@ -281,7 +281,7 @@ export default function Home() {
                                       <div
                                         className={classNames(
                                           statuses[
-                                            transaction.status as keyof typeof statuses
+                                          transaction.status as keyof typeof statuses
                                           ],
                                           "rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset"
                                         )}
