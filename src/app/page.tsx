@@ -8,43 +8,27 @@ import {
   ArrowUpCircleIcon,
   EllipsisHorizontalIcon,
   PlusSmallIcon,
-} from "@heroicons/react/20/solid";
 
-const secondaryNavigation = [
-  { name: "Last 7 days", href: "#", current: true },
-  { name: "Last 30 days", href: "#", current: false },
-  { name: "All-time", href: "#", current: false },
-];
+} from "@heroicons/react/20/solid";
+import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
+
 const stats = [
   {
-    name: "Revenue",
-    value: "$405,091.00",
-    change: "+4.75%",
-    changeType: "positive",
+    currency: "MXN",
+    flag: "/images/flags/flagmexico.png",
+    value: "501,092.00",
   },
   {
-    name: "Overdue invoices",
-    value: "$12,787.00",
-    change: "+54.02%",
-    changeType: "negative",
-  },
-  {
-    name: "Outstanding invoices",
-    value: "$245,988.00",
-    change: "-1.39%",
-    changeType: "positive",
-  },
-  {
-    name: "Expenses",
-    value: "$30,156.00",
-    change: "+10.18%",
-    changeType: "negative",
+    currency: "BRL",
+    flag: "/images/flags/flagbrazil.png",
+    value: "802,345.00",
   },
 ];
+
 const statuses = {
-  Paid: "text-green-700 bg-green-50 ring-green-600/20",
-  Withdraw: "text-gray-600 bg-gray-50 ring-gray-500/10",
-  Overdue: "text-red-700 bg-red-50 ring-red-600/10",
+  Paid: "text-green-700 bg-green-50 ring-green-50",
+  Withdraw: "text-primary bg-gray-50 ring-gray-50",
+  Overdue: "text-red-700 bg-red-50 ring-red-50",
 };
 
 type StatusType = keyof typeof statuses;
@@ -151,33 +135,29 @@ export default function Home() {
   return (
     <>
       <main>
-        <div className="relative isolate overflow-hidden pt-16">
+        <div className="relative isolate overflow-hidden mt-[110px]">
           {/* Secondary navigation */}
           <header className="pt-6 pb-4 sm:pb-6">
-            <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-6 px-4 sm:flex-nowrap sm:px-6 lg:px-8">
-              <h1 className="text-base/7 font-semibold text-gray-900">
-                Cashflow
+            <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-4 sm:flex-nowrap sm:px-6 lg:px-8">
+              <h1 className="text-base/7 font-semibold text-black">
+                Dashboard
               </h1>
-              <div className="order-last flex w-full gap-x-8 text-sm/6 font-semibold sm:order-0 sm:w-auto sm:border-l sm:border-gray-200 sm:pl-6 sm:text-sm/7">
-                {secondaryNavigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className={
-                      item.current ? "text-indigo-600" : "text-gray-700"
-                    }
-                  >
-                    {item.name}
-                  </a>
-                ))}
+              <div className="flex items-center justify-between gap-x-4">
+                <a
+                  type="button"
+                  className="cursor-pointer inline-flex h-[44px] items-center justify-center gap-2 rounded-lg border border-[#D0D5DD] bg-[#F9FAFB] px-4 text-sm font-medium text-[#344054] shadow-sm hover:bg-[#F3F4F6]"
+                >
+                  <AdjustmentsHorizontalIcon className="w-5 h-5" />
+                  <span>Filter</span>
+                </a>
+                <a
+                  href="#"
+                  className="ml-auto flex h-[44px] items-center gap-x-1 rounded-md bg-secondary px-4 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2"
+                >
+                  <PlusSmallIcon aria-hidden="true" className="-ml-1.5 size-5" />
+                  New invoice
+                </a>
               </div>
-              <a
-                href="#"
-                className="ml-auto flex items-center gap-x-1 rounded-md bg-secondary px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                <PlusSmallIcon aria-hidden="true" className="-ml-1.5 size-5" />
-                New invoice
-              </a>
             </div>
           </header>
 
@@ -186,56 +166,31 @@ export default function Home() {
             <dl className="mx-auto grid max-w-7xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:px-2 xl:px-0">
               {stats.map((stat, statIdx) => (
                 <div
-                  key={stat.name}
+                  key={stat.currency}
                   className={classNames(
-                    statIdx % 2 === 1
-                      ? "sm:border-l"
-                      : statIdx === 2
-                        ? "lg:border-l"
-                        : "",
-                    "flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 border-t border-gray-900/5 px-4 py-10 sm:px-6 lg:border-t-0 xl:px-8"
+                    statIdx % 2 === 1 ? "sm:border-l" : statIdx === 2 ? "lg:border-l" : "",
+                    "flex flex-col items-start justify-start border-t border-gray-900/5 px-4 py-10 sm:px-6 lg:border-t-0 xl:px-8"
                   )}
                 >
-                  <dt className="text-sm/6 font-medium text-gray-500">
-                    {stat.name}
-                  </dt>
-                  <dd
-                    className={classNames(
-                      stat.changeType === "negative"
-                        ? "text-rose-600"
-                        : "text-gray-700",
-                      "text-xs font-medium"
-                    )}
-                  >
-                    {stat.change}
-                  </dd>
-                  <dd className="w-full flex-none text-3xl/10 font-medium tracking-tight text-gray-900">
-                    {stat.value}
-                  </dd>
+                  <div className="flex items-center gap-4">
+                    <img
+                      src={stat.flag}
+                      alt={`${stat.currency} flag`}
+                    />
+                    <span className="text-lg font-medium text-primary">{stat.currency}</span>
+                  </div>
+                  <dd className="mt-4 text-2xl font-semibold text-black">{stat.value}</dd>
                 </div>
               ))}
             </dl>
           </div>
-
-          <div
-            aria-hidden="true"
-            className="absolute top-full left-0 -z-10 mt-96 origin-top-left translate-y-40 -rotate-90 transform-gpu opacity-20 blur-3xl sm:left-1/2 sm:-mt-10 sm:-ml-96 sm:translate-y-0 sm:rotate-0 sm:transform-gpu sm:opacity-50"
-          >
-            <div
-              style={{
-                clipPath:
-                  "polygon(100% 38.5%, 82.6% 100%, 60.2% 37.7%, 52.4% 32.1%, 47.5% 41.8%, 45.2% 65.6%, 27.5% 23.4%, 0.1% 35.3%, 17.9% 0%, 27.7% 23.4%, 76.2% 2.5%, 74.2% 56%, 100% 38.5%)",
-              }}
-              className="aspect-1154/678 w-288.5 bg-linear-to-br from-[#FF80B5] to-[#9089FC]"
-            />
-          </div>
         </div>
 
-        <div className="space-y-16 py-16 xl:space-y-20">
+        <div className="space-y-16 py-16 ">
           {/* Recent activity table */}
           <div>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <h2 className="mx-auto max-w-2xl text-base font-semibold text-gray-900 lg:mx-0 lg:max-w-none">
+              <h2 className="mx-auto max-w-2xl text-base font-semibold text-black lg:mx-0 lg:max-w-none">
                 Recent activity
               </h2>
             </div>
@@ -253,13 +208,13 @@ export default function Home() {
                     <tbody>
                       {days.map((day) => (
                         <Fragment key={day.dateTime}>
-                          <tr className="text-sm/6 text-gray-900">
+                          <tr className="text-sm/6 text-primary">
                             <th
                               scope="colgroup"
                               colSpan={3}
                               className="relative isolate py-2 font-semibold"
                             >
-                              <time dateTime={day.dateTime}>{day.date}</time>
+                              <time className="text-black" dateTime={day.dateTime}>{day.date}</time>
                               <div className="absolute inset-y-0 right-full -z-10 w-screen border-b border-gray-200 bg-gray-50" />
                               <div className="absolute inset-y-0 left-0 -z-10 w-screen border-b border-gray-200 bg-gray-50" />
                             </th>
@@ -270,11 +225,11 @@ export default function Home() {
                                 <div className="flex gap-x-6">
                                   <transaction.icon
                                     aria-hidden="true"
-                                    className="hidden h-6 w-5 flex-none text-gray-400 sm:block"
+                                    className="hidden h-6 w-5 flex-none text-primary sm:block"
                                   />
                                   <div className="flex-auto">
                                     <div className="flex items-start gap-x-3">
-                                      <div className="text-sm/6 font-medium text-gray-900">
+                                      <div className="text-sm/6 font-medium text-black">
                                         {transaction.amount}
                                       </div>
                                       <div
@@ -289,7 +244,7 @@ export default function Home() {
                                       </div>
                                     </div>
                                     {transaction.tax ? (
-                                      <div className="mt-1 text-xs/5 text-gray-500">
+                                      <div className="mt-1 text-xs/5 text-primary">
                                         {transaction.tax} tax
                                       </div>
                                     ) : null}
@@ -299,10 +254,10 @@ export default function Home() {
                                 <div className="absolute bottom-0 left-0 h-px w-screen bg-gray-100" />
                               </td>
                               <td className="hidden py-5 pr-6 sm:table-cell">
-                                <div className="text-sm/6 text-gray-900">
+                                <div className="text-sm/6 text-black font-medium">
                                   {transaction.client}
                                 </div>
-                                <div className="mt-1 text-xs/5 text-gray-500">
+                                <div className="mt-1 text-xs/5 text-primary">
                                   {transaction.description}
                                 </div>
                               </td>
@@ -310,7 +265,7 @@ export default function Home() {
                                 <div className="flex justify-end">
                                   <a
                                     href={transaction.href}
-                                    className="text-sm/6 font-medium text-indigo-600 hover:text-indigo-500"
+                                    className="text-sm/6 font-medium text-secondary"
                                   >
                                     View
                                     <span className="hidden sm:inline">
@@ -323,9 +278,9 @@ export default function Home() {
                                     </span>
                                   </a>
                                 </div>
-                                <div className="mt-1 text-xs/5 text-gray-500">
+                                <div className="mt-1 text-xs/5 text-primary">
                                   Invoice{" "}
-                                  <span className="text-gray-900">
+                                  <span className="text-black font-medium">
                                     #{transaction.invoiceNumber}
                                   </span>
                                 </div>
@@ -345,12 +300,12 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
               <div className="flex items-center justify-between">
-                <h2 className="text-base/7 font-semibold text-gray-900">
+                <h2 className="text-base/7 font-semibold text-black">
                   Recent clients
                 </h2>
                 <a
                   href="#"
-                  className="text-sm/6 font-semibold text-indigo-600 hover:text-indigo-500"
+                  className="text-sm/6 font-semibold text-secondary"
                 >
                   View all<span className="sr-only">, clients</span>
                 </a>
@@ -370,11 +325,11 @@ export default function Home() {
                         src={client.imageUrl}
                         className="size-12 flex-none rounded-lg bg-white object-cover ring-1 ring-gray-900/10"
                       />
-                      <div className="text-sm/6 font-medium text-gray-900">
+                      <div className="text-sm/6 font-medium text-primary">
                         {client.name}
                       </div>
                       <Menu as="div" className="relative ml-auto">
-                        <MenuButton className="relative block text-gray-400 hover:text-gray-500">
+                        <MenuButton className="relative block text-primary hover:text-primary">
                           <span className="absolute -inset-2.5" />
                           <span className="sr-only">Open options</span>
                           <EllipsisHorizontalIcon
@@ -389,7 +344,7 @@ export default function Home() {
                           <MenuItem>
                             <a
                               href="#"
-                              className="block px-3 py-1 text-sm/6 text-gray-900 data-focus:bg-gray-50 data-focus:outline-hidden"
+                              className="block px-3 py-1 text-sm/6 text-primary data-focus:bg-gray-50 data-focus:outline-hidden"
                             >
                               View
                               <span className="sr-only">, {client.name}</span>
@@ -398,7 +353,7 @@ export default function Home() {
                           <MenuItem>
                             <a
                               href="#"
-                              className="block px-3 py-1 text-sm/6 text-gray-900 data-focus:bg-gray-50 data-focus:outline-hidden"
+                              className="block px-3 py-1 text-sm/6 text-primary data-focus:bg-gray-50 data-focus:outline-hidden"
                             >
                               Edit
                               <span className="sr-only">, {client.name}</span>
@@ -409,17 +364,17 @@ export default function Home() {
                     </div>
                     <dl className="-my-3 divide-y divide-gray-100 px-6 py-4 text-sm/6">
                       <div className="flex justify-between gap-x-4 py-3">
-                        <dt className="text-gray-500">Last invoice</dt>
-                        <dd className="text-gray-700">
+                        <dt className="text-primary">Last invoice</dt>
+                        <dd className="text-primary">
                           <time dateTime={client.lastInvoice.dateTime}>
                             {client.lastInvoice.date}
                           </time>
                         </dd>
                       </div>
                       <div className="flex justify-between gap-x-4 py-3">
-                        <dt className="text-gray-500">Amount</dt>
+                        <dt className="text-primary">Amount</dt>
                         <dd className="flex items-start gap-x-2">
-                          <div className="font-medium text-gray-900">
+                          <div className="font-medium text-black">
                             {client.lastInvoice.amount}
                           </div>
                           <div

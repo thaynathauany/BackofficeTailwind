@@ -34,35 +34,11 @@ const invoice = {
   items: [
     {
       id: 1,
-      title: "Logo redesign",
-      description: "New logo and digital asset playbook.",
-      hours: "20.0",
-      rate: "$100.00",
-      price: "$2,000.00",
-    },
-    {
-      id: 2,
-      title: "Website redesign",
-      description: "Design and program new company website.",
-      hours: "52.0",
-      rate: "$100.00",
-      price: "$5,200.00",
-    },
-    {
-      id: 3,
-      title: "Business cards",
-      description: 'Design and production of 3.5" x 2.0" business cards.',
-      hours: "12.0",
-      rate: "$100.00",
-      price: "$1,200.00",
-    },
-    {
-      id: 4,
-      title: "T-shirt design",
-      description: "Three t-shirt design concepts.",
-      hours: "4.0",
-      rate: "$100.00",
-      price: "$400.00",
+      title: "México",
+      description: "Lorem ipsum",
+      data: "20/08",
+      tax: "$100.00",
+      total: "$2,000.00",
     },
   ],
 };
@@ -156,7 +132,7 @@ const moods = [
     name: "I feel nothing",
     value: null,
     icon: XMarkIconMini,
-    iconColor: "text-gray-400",
+    iconColor: "text-primary",
     bgColor: "bg-transparent",
   },
 ];
@@ -171,20 +147,11 @@ export default function Details() {
   return (
     <>
       <main>
-        <header className="relative isolate pt-16">
+        <header className="relative isolate mt-[110px]">
           <div
             aria-hidden="true"
             className="absolute inset-0 -z-10 overflow-hidden"
           >
-            <div className="absolute top-full left-16 -mt-16 transform-gpu opacity-50 blur-3xl xl:left-1/2 xl:-ml-80">
-              <div
-                style={{
-                  clipPath:
-                    "polygon(100% 38.5%, 82.6% 100%, 60.2% 37.7%, 52.4% 32.1%, 47.5% 41.8%, 45.2% 65.6%, 27.5% 23.4%, 0.1% 35.3%, 17.9% 0%, 27.7% 23.4%, 76.2% 2.5%, 74.2% 56%, 100% 38.5%)",
-                }}
-                className="aspect-1154/678 w-288.5 bg-linear-to-br from-[#FF80B5] to-[#9089FC]"
-              />
-            </div>
             <div className="absolute inset-x-0 bottom-0 h-px bg-gray-900/5" />
           </div>
 
@@ -193,14 +160,14 @@ export default function Details() {
               <div className="flex items-center gap-x-6">
                 <img
                   alt=""
-                  src="https://tailwindcss.com/plus-assets/img/logos/48x48/tuple.svg"
+                  src="/images/logos/dinerolatam.jpg"
                   className="size-16 flex-none rounded-full ring-1 ring-gray-900/10"
                 />
                 <h1>
-                  <div className="text-sm/6 text-gray-500">
-                    Invoice <span className="text-gray-700">#00011</span>
+                  <div className="text-sm/6 text-primary">
+                    Invoice <span className="text-black font-medium">#00011</span>
                   </div>
-                  <div className="mt-1 text-base font-semibold text-gray-900">
+                  <div className="mt-1 text-base font-medium text-black">
                     Tuple, Inc
                   </div>
                 </h1>
@@ -208,19 +175,19 @@ export default function Details() {
               <div className="flex items-center gap-x-4 sm:gap-x-6">
                 <button
                   type="button"
-                  className="hidden text-sm/6 font-semibold text-gray-900 sm:block"
+                  className="hidden text-sm/6 font-semibold text-black sm:block"
                 >
                   Copy URL
                 </button>
                 <a
                   href="#"
-                  className="hidden text-sm/6 font-semibold text-gray-900 sm:block"
+                  className="hidden text-sm/6 font-semibold text-black sm:block"
                 >
                   Edit
                 </a>
                 <a
                   href="#"
-                  className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="rounded-md bg-secondary px-3 py-2 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2"
                 >
                   Send
                 </a>
@@ -231,7 +198,7 @@ export default function Details() {
                     <span className="sr-only">More</span>
                     <EllipsisVerticalIcon
                       aria-hidden="true"
-                      className="size-5 text-gray-500"
+                      className="size-5 text-primary"
                     />
                   </MenuButton>
 
@@ -242,7 +209,7 @@ export default function Details() {
                     <MenuItem>
                       <button
                         type="button"
-                        className="block w-full px-3 py-1 text-left text-sm/6 text-gray-900 data-focus:bg-gray-50 data-focus:outline-hidden"
+                        className="block w-full px-3 py-1 text-left text-sm/6 text-primary data-focus:bg-gray-50 data-focus:outline-hidden"
                       >
                         Copy URL
                       </button>
@@ -250,7 +217,7 @@ export default function Details() {
                     <MenuItem>
                       <a
                         href="#"
-                        className="block px-3 py-1 text-sm/6 text-gray-900 data-focus:bg-gray-50 data-focus:outline-hidden"
+                        className="block px-3 py-1 text-sm/6 text-primary data-focus:bg-gray-50 data-focus:outline-hidden"
                       >
                         Edit
                       </a>
@@ -270,16 +237,16 @@ export default function Details() {
               <div className="rounded-lg bg-gray-50 shadow-xs ring-1 ring-gray-900/5">
                 <dl className="flex flex-wrap">
                   <div className="flex-auto pt-6 pl-6">
-                    <dt className="text-sm/6 font-semibold text-gray-900">
+                    <dt className="text-sm/6 font-semibold text-black">
                       Amount
                     </dt>
-                    <dd className="mt-1 text-base font-semibold text-gray-900">
+                    <dd className="mt-1 text-base font-semibold text-black">
                       $10,560.00
                     </dd>
                   </div>
                   <div className="flex-none self-end px-6 pt-4">
                     <dt className="sr-only">Status</dt>
-                    <dd className="rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-600 ring-1 ring-green-600/20 ring-inset">
+                    <dd className="rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 bg-green-50 ring-green-50">
                       Paid
                     </dd>
                   </div>
@@ -288,10 +255,10 @@ export default function Details() {
                       <span className="sr-only">Client</span>
                       <UserCircleIcon
                         aria-hidden="true"
-                        className="h-6 w-5 text-gray-400"
+                        className="h-6 w-5 text-primary"
                       />
                     </dt>
-                    <dd className="text-sm/6 font-medium text-gray-900">
+                    <dd className="text-sm/6 font-medium text-black">
                       Alex Curren
                     </dd>
                   </div>
@@ -300,10 +267,10 @@ export default function Details() {
                       <span className="sr-only">Due date</span>
                       <CalendarDaysIcon
                         aria-hidden="true"
-                        className="h-6 w-5 text-gray-400"
+                        className="h-6 w-5 text-primary"
                       />
                     </dt>
-                    <dd className="text-sm/6 text-gray-500">
+                    <dd className="text-sm/6 text-primary">
                       <time dateTime="2023-01-31">January 31, 2023</time>
                     </dd>
                   </div>
@@ -312,16 +279,16 @@ export default function Details() {
                       <span className="sr-only">Status</span>
                       <CreditCardIcon
                         aria-hidden="true"
-                        className="h-6 w-5 text-gray-400"
+                        className="h-6 w-5 text-primary"
                       />
                     </dt>
-                    <dd className="text-sm/6 text-gray-500">
+                    <dd className="text-sm/6 text-primary">
                       Paid with MasterCard
                     </dd>
                   </div>
                 </dl>
                 <div className="mt-6 border-t border-gray-900/5 px-6 py-6">
-                  <a href="#" className="text-sm/6 font-semibold text-gray-900">
+                  <a href="#" className="text-sm/6 font-semibold text-black">
                     Download receipt <span aria-hidden="true">&rarr;</span>
                   </a>
                 </div>
@@ -330,24 +297,24 @@ export default function Details() {
 
             {/* Invoice */}
             <div className="-mx-4 px-4 py-8 shadow-xs ring-1 ring-gray-900/5 sm:mx-0 sm:rounded-lg sm:px-8 sm:pb-14 lg:col-span-2 lg:row-span-2 lg:row-end-2 xl:px-16 xl:pt-16 xl:pb-20">
-              <h2 className="text-base font-semibold text-gray-900">Invoice</h2>
+              <h2 className="text-base font-semibold text-black">Invoice</h2>
               <dl className="mt-6 grid grid-cols-1 text-sm/6 sm:grid-cols-2">
                 <div className="sm:pr-4">
-                  <dt className="inline text-gray-500">Issued on</dt>{" "}
-                  <dd className="inline text-gray-700">
+                  <dt className="inline text-primary">Issued on</dt>{" "}
+                  <dd className="inline text-primary">
                     <time dateTime="2023-23-01">January 23, 2023</time>
                   </dd>
                 </div>
                 <div className="mt-2 sm:mt-0 sm:pl-4">
-                  <dt className="inline text-gray-500">Due on</dt>{" "}
-                  <dd className="inline text-gray-700">
+                  <dt className="inline text-primary">Due on</dt>{" "}
+                  <dd className="inline text-primary">
                     <time dateTime="2023-31-01">January 31, 2023</time>
                   </dd>
                 </div>
                 <div className="mt-6 border-t border-gray-900/5 pt-6 sm:pr-4">
-                  <dt className="font-semibold text-gray-900">From</dt>
-                  <dd className="mt-2 text-gray-500">
-                    <span className="font-medium text-gray-900">
+                  <dt className="font-semibold text-black">From</dt>
+                  <dd className="mt-2 text-primary">
+                    <span className="font-medium text-black">
                       Acme, Inc.
                     </span>
                     <br />
@@ -357,9 +324,9 @@ export default function Details() {
                   </dd>
                 </div>
                 <div className="mt-8 sm:mt-6 sm:border-t sm:border-gray-900/5 sm:pt-6 sm:pl-4">
-                  <dt className="font-semibold text-gray-900">To</dt>
-                  <dd className="mt-2 text-gray-500">
-                    <span className="font-medium text-gray-900">
+                  <dt className="font-semibold text-black">To</dt>
+                  <dd className="mt-2 text-primary">
+                    <span className="font-medium text-black">
                       Tuple, Inc
                     </span>
                     <br />
@@ -376,28 +343,28 @@ export default function Details() {
                   <col />
                   <col />
                 </colgroup>
-                <thead className="border-b border-gray-200 text-gray-900">
+                <thead className="border-b border-gray-200 text-black">
                   <tr>
                     <th scope="col" className="px-0 py-3 font-semibold">
-                      Projects
+                      Name
                     </th>
                     <th
                       scope="col"
                       className="hidden py-3 pr-0 pl-8 text-right font-semibold sm:table-cell"
                     >
-                      Hours
+                      Date
                     </th>
                     <th
                       scope="col"
                       className="hidden py-3 pr-0 pl-8 text-right font-semibold sm:table-cell"
                     >
-                      Rate
+                      Tax
                     </th>
                     <th
                       scope="col"
                       className="py-3 pr-0 pl-8 text-right font-semibold"
                     >
-                      Price
+                      Total
                     </th>
                   </tr>
                 </thead>
@@ -405,21 +372,21 @@ export default function Details() {
                   {invoice.items.map((item) => (
                     <tr key={item.id} className="border-b border-gray-100">
                       <td className="max-w-0 px-0 py-5 align-top">
-                        <div className="truncate font-medium text-gray-900">
+                        <div className="truncate font-medium text-black">
                           {item.title}
                         </div>
-                        <div className="truncate text-gray-500">
+                        <div className="truncate text-primary">
                           {item.description}
                         </div>
                       </td>
-                      <td className="hidden py-5 pr-0 pl-8 text-right align-top text-gray-700 tabular-nums sm:table-cell">
-                        {item.hours}
+                      <td className="hidden py-5 pr-0 pl-8 text-right align-top text-black font-medium tabular-nums sm:table-cell">
+                        {item.data}
                       </td>
-                      <td className="hidden py-5 pr-0 pl-8 text-right align-top text-gray-700 tabular-nums sm:table-cell">
-                        {item.rate}
+                      <td className="hidden py-5 pr-0 pl-8 text-right align-top text-black font-medium tabular-nums sm:table-cell">
+                        {item.tax}
                       </td>
-                      <td className="py-5 pr-0 pl-8 text-right align-top text-gray-700 tabular-nums">
-                        {item.price}
+                      <td className="py-5 pr-0 pl-8 text-right align-top text-black font-medium tabular-nums">
+                        {item.total}
                       </td>
                     </tr>
                   ))}
@@ -428,54 +395,54 @@ export default function Details() {
                   <tr>
                     <th
                       scope="row"
-                      className="px-0 pt-6 pb-0 font-normal text-gray-700 sm:hidden"
+                      className="px-0 pt-6 pb-0 font-normal text-primary sm:hidden"
                     >
                       Subtotal
                     </th>
                     <th
                       scope="row"
                       colSpan={3}
-                      className="hidden px-0 pt-6 pb-0 text-right font-normal text-gray-700 sm:table-cell"
+                      className="hidden px-0 pt-6 pb-0 text-right font-normal text-primary sm:table-cell"
                     >
                       Subtotal
                     </th>
-                    <td className="pt-6 pr-0 pb-0 pl-8 text-right text-gray-900 tabular-nums">
+                    <td className="pt-6 pr-0 pb-0 pl-8 text-right font-semibold text-black tabular-nums">
                       {invoice.subTotal}
                     </td>
                   </tr>
                   <tr>
                     <th
                       scope="row"
-                      className="pt-4 font-normal text-gray-700 sm:hidden"
+                      className="pt-4 font-normal text-primary sm:hidden"
                     >
                       Tax
                     </th>
                     <th
                       scope="row"
                       colSpan={3}
-                      className="hidden pt-4 text-right font-normal text-gray-700 sm:table-cell"
+                      className="hidden pt-4 text-right font-normal text-primary sm:table-cell"
                     >
                       Tax
                     </th>
-                    <td className="pt-4 pr-0 pb-0 pl-8 text-right text-gray-900 tabular-nums">
+                    <td className="pt-4 pr-0 pb-0 pl-8 text-right font-semibold text-black tabular-nums">
                       {invoice.tax}
                     </td>
                   </tr>
                   <tr>
                     <th
                       scope="row"
-                      className="pt-4 font-semibold text-gray-900 sm:hidden"
+                      className="pt-4 text-primary sm:hidden"
                     >
                       Total
                     </th>
                     <th
                       scope="row"
                       colSpan={3}
-                      className="hidden pt-4 text-right font-semibold text-gray-900 sm:table-cell"
+                      className="hidden pt-4 text-right text-primary font-normal sm:table-cell"
                     >
                       Total
                     </th>
-                    <td className="pt-4 pr-0 pb-0 pl-8 text-right font-semibold text-gray-900 tabular-nums">
+                    <td className="pt-4 pr-0 pb-0 pl-8 text-right font-semibold text-black tabular-nums">
                       {invoice.total}
                     </td>
                   </tr>
@@ -485,7 +452,7 @@ export default function Details() {
 
             <div className="lg:col-start-3">
               {/* Activity feed */}
-              <h2 className="text-sm/6 font-semibold text-gray-900">
+              <h2 className="text-sm/6 font-semibold text-black">
                 Activity
               </h2>
               <ul role="list" className="mt-6 space-y-6">
@@ -510,20 +477,20 @@ export default function Details() {
                         />
                         <div className="flex-auto rounded-md p-3 ring-1 ring-gray-200 ring-inset">
                           <div className="flex justify-between gap-x-4">
-                            <div className="py-0.5 text-xs/5 text-gray-500">
-                              <span className="font-medium text-gray-900">
+                            <div className="py-0.5 text-xs/5 text-primary">
+                              <span className="font-medium text-black">
                                 {activityItem.person.name}
                               </span>{" "}
                               commented
                             </div>
                             <time
                               dateTime={activityItem.dateTime}
-                              className="flex-none py-0.5 text-xs/5 text-gray-500"
+                              className="flex-none py-0.5 text-xs/5 text-primary"
                             >
                               {activityItem.date}
                             </time>
                           </div>
-                          <p className="text-sm/6 text-gray-500">
+                          <p className="text-sm/6 text-primary">
                             {activityItem.comment}
                           </p>
                         </div>
@@ -534,21 +501,21 @@ export default function Details() {
                           {activityItem.type === "paid" ? (
                             <CheckCircleIcon
                               aria-hidden="true"
-                              className="size-6 text-indigo-600"
+                              className="size-6 text-secondary"
                             />
                           ) : (
                             <div className="size-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300" />
                           )}
                         </div>
-                        <p className="flex-auto py-0.5 text-xs/5 text-gray-500">
-                          <span className="font-medium text-gray-900">
+                        <p className="flex-auto py-0.5 text-xs/5 text-primary">
+                          <span className="font-medium text-black">
                             {activityItem.person.name}
                           </span>{" "}
                           {activityItem.type} the invoice.
                         </p>
                         <time
                           dateTime={activityItem.dateTime}
-                          className="flex-none py-0.5 text-xs/5 text-gray-500"
+                          className="flex-none py-0.5 text-xs/5 text-primary"
                         >
                           {activityItem.date}
                         </time>
@@ -566,7 +533,7 @@ export default function Details() {
                   className="size-6 flex-none rounded-full bg-gray-50"
                 />
                 <form action="#" className="relative flex-auto">
-                  <div className="overflow-hidden rounded-lg pb-12 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                  <div className="overflow-hidden rounded-lg pb-12 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2">
                     <label htmlFor="comment" className="sr-only">
                       Add your comment
                     </label>
@@ -575,7 +542,7 @@ export default function Details() {
                       name="comment"
                       rows={2}
                       placeholder="Add your comment..."
-                      className="block w-full resize-none bg-transparent px-3 py-1.5 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                      className="block w-full resize-none bg-transparent px-3 py-1.5 text-base text-primary placeholder:text-primary focus:outline-none sm:text-sm/6"
                       defaultValue={""}
                     />
                   </div>
@@ -585,7 +552,7 @@ export default function Details() {
                       <div className="flex items-center">
                         <button
                           type="button"
-                          className="-m-2.5 flex size-10 items-center justify-center rounded-full text-gray-400 hover:text-gray-500"
+                          className="-m-2.5 flex size-10 items-center justify-center rounded-full text-primary hover:text-primary"
                         >
                           <PaperClipIcon
                             aria-hidden="true"
@@ -598,7 +565,7 @@ export default function Details() {
                         <Listbox value={selected} onChange={setSelected}>
                           <Label className="sr-only">Your mood</Label>
                           <div className="relative">
-                            <ListboxButton className="relative -m-2.5 flex size-10 items-center justify-center rounded-full text-gray-400 hover:text-gray-500">
+                            <ListboxButton className="relative -m-2.5 flex size-10 items-center justify-center rounded-full text-primary hover:text-primary">
                               <span className="flex items-center justify-center">
                                 {selected.value === null ? (
                                   <span>
@@ -669,7 +636,7 @@ export default function Details() {
                     </div>
                     <button
                       type="submit"
-                      className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50"
+                      className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-black shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50"
                     >
                       Comment
                     </button>
