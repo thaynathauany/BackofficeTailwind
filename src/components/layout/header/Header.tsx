@@ -52,8 +52,9 @@ export default function Header() {
             <Bars3Icon aria-hidden="true" className="size-5 text-primary" />
           </button>
           <img
-            src="/images/logos/logodinero.svg"
+            src="/images/logos/dinerolatam.jpg"
             alt="Logotipo da Dinero"
+            className="h-12 w-auto"
           />
         </div>
         <nav className="hidden md:flex md:gap-x-11 md:text-sm/6 md:font-semibold">
@@ -132,9 +133,9 @@ export default function Header() {
                 <a href="#" className="-m-1.5 block p-1.5">
                   <span className="sr-only">Your Company</span>
                   <img
-                    alt=""
-                    src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                    className="h-8 w-auto"
+                    src="/images/logos/dinerolatam.jpg"
+                    alt="Logotipo da Dinero"
+                    className="h-12 w-auto"
                   />
                 </a>
               </div>

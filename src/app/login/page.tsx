@@ -13,12 +13,12 @@ export default function Login() {
               <img
                 alt="Your Company"
                 src="/images/logos/dinerolatam.jpg"
-                className="h-10 w-auto dark:hidden"
+                className="h-12 w-auto dark:hidden"
               />
               <img
                 alt="Your Company"
                 src="/images/logos/dinerolatam.jpg"
-                className="h-10 w-auto not-dark:hidden"
+                className="h-12 w-auto not-dark:hidden"
               />
               <h2 className="mt-8 text-2xl/9 font-bold tracking-tight text-black dark:text-white">
                 {t("title")}
